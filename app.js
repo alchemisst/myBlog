@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const _ = require('lodash');
 
 const app = express();
 
@@ -14,17 +15,52 @@ const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pelle
 const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
 
 
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+let data = [];
+
 app.get('/',function(req,res){
-  res.render('home.ejs',{home:homeStartingContent,about:aboutContent,contact:contactContent})
+  res.render('home.ejs',{arr:data})
+})
+
+app.get('/about',function(req,res){
+  res.render('about.ejs',{arr:data})
+})
+
+app.get('/contact',function(req,res){
+  res.render('contact.ejs',{contact:contactContent})
 })
 
 
 
 
+app.get('/compose',function(req,res){
+  res.render('compose.ejs')
+})
+app.post('/compose',function(req,res){
+  const post = {
+    postTitle:req.body.title,
+    postContent:req.body.para
+  }
+ data.push(post);
+ res.redirect('/');
 
+});
+
+
+
+app.get("/posts/:day",function(req,res){
+
+data.forEach(function(element){
+  if(_.camelCase(req.params.day)===_.camelCase(element.postTitle)){
+    res.render('blog.ejs',{
+      postTitle:element.postTitle,
+      postContent:element.postContent})
+  }
+})
+})
 
 
 

@@ -485,12 +485,37 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
 .mx-52 {
   margin-left: 13rem;
   margin-right: 13rem;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+.ml-4 {
+  margin-left: 1rem;
+}
 .ml-72 {
   margin-left: 18rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-3 {
+  margin-top: 0.75rem;
+}
+.mt-5 {
+  margin-top: 1.25rem;
 }
 .mt-auto {
   margin-top: auto;
@@ -498,11 +523,17 @@ video {
 .flex {
   display: flex;
 }
+.h-\[100px\] {
+  height: 100px;
+}
 .min-h-screen {
   min-height: 100vh;
 }
-.w-40 {
-  width: 10rem;
+.w-\[220px\] {
+  width: 220px;
+}
+.w-\[43rem\] {
+  width: 43rem;
 }
 .flex-col {
   flex-direction: column;
@@ -517,13 +548,33 @@ video {
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
-.bg-\[\#A7D397\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(167 211 151 / var(--tw-bg-opacity));
+.rounded-lg {
+  border-radius: 0.5rem;
 }
-.bg-\[\#CDFAD5\] {
+.bg-\[\#D0D4CA\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(205 250 213 / var(--tw-bg-opacity));
+  background-color: rgb(208 212 202 / var(--tw-bg-opacity));
+}
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+}
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+.p-1 {
+  padding: 0.25rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
 }
 .text-center {
   text-align: center;
@@ -534,4 +585,18 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.underline {
+  text-decoration-line: underline;
+}
+.hover\:text-cyan-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(103 232 249 / var(--tw-text-opacity));
 }
